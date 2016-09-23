@@ -1,0 +1,36 @@
+{
+  "name": "jquerysecond",
+  "version": "0.1.0",
+  "description": "Players Data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nischay Goyal",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-route": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.13.0",
+    "css-loader": "^0.25.0",
+    "flexboxgrid": "^6.3.1",
+    "jquery": "^3.1.0",
+    "material-ui-paginate": "^1.0.0",
+    "materialize-css": "^0.97.7",
+    "node-sass": "^3.10.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-paginate": "^2.2.3",
+    "react-route": "^1.0.3",
+    "react-router": "^2.8.1",
+    "react-tap-event-plugin": "^1.0.0",
+    "style-loader": "^0.13.1"
+  }
+}
