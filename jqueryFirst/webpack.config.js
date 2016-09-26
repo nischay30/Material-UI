@@ -1,6 +1,6 @@
 var path = require("path");
 module.exports = {
-	entry:'./public/Main.jsx',
+	entry:'./public/components/Main.jsx',
 	output : {
 		path: './public',
 		filename: "bundle.js"

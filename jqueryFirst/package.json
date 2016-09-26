@@ -4,7 +4,9 @@
   "description": "Jquery Material UI first",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server" :"webpack-dev-server --content-base public --hot --inline",
+    "build":"webpack"
   },
   "author": "Nishcay Goyal <nischay.goyal@gmail.com>",
   "license": "ISC",

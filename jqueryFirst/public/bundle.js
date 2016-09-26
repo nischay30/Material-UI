@@ -66,19 +66,19 @@
 
 	var _MovieTable2 = _interopRequireDefault(_MovieTable);
 
-	var _AppBar = __webpack_require__(389);
+	var _AppBar = __webpack_require__(390);
 
 	var _AppBar2 = _interopRequireDefault(_AppBar);
 
-	var _jquery = __webpack_require__(397);
+	var _jquery = __webpack_require__(398);
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(398);
+	__webpack_require__(399);
 
-	var injectTapEventPlugin = __webpack_require__(402);
+	var injectTapEventPlugin = __webpack_require__(403);
 
 	var MovieBox = _react2.default.createClass({
 		displayName: 'MovieBox',
@@ -28382,7 +28382,7 @@
 				null,
 				_react2.default.createElement(_TextField2.default, { floatingLabelText: 'Movie Name', style: { marginLeft: "20%", width: '300px' }, required: true, value: this.state.title, onChange: this.handleChange }),
 				' ',
-				_react2.default.createElement(_RaisedButton2.default, { label: 'Search', inputType: 'submit', primary: true, onClick: this.handleSubmit })
+				_react2.default.createElement(_RaisedButton2.default, { label: 'Search', type: 'submit', primary: true, onClick: this.handleSubmit })
 			);
 		}
 	});
@@ -32579,6 +32579,10 @@
 
 	var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
+	var _Img = __webpack_require__(389);
+
+	var _Img2 = _interopRequireDefault(_Img);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var MovieTable = _react2.default.createClass({
@@ -32616,7 +32620,11 @@
 					return _react2.default.createElement(
 						_Table.TableRow,
 						{ key: data.imdbID },
-						_react2.default.createElement(_Table.TableRowColumn, { style: { background: 'url(' + data.Poster + ') top center no-repeat', height: '340px', width: 'initial' } }),
+						_react2.default.createElement(
+							_Table.TableRowColumn,
+							{ style: { padding: 0 } },
+							_react2.default.createElement(_Img2.default, { poster: data.Poster })
+						),
 						_react2.default.createElement(
 							_Table.TableRowColumn,
 							{ style: { fontSize: '20px', textAlign: 'center' } },
@@ -32635,43 +32643,48 @@
 					);
 				}
 			}.bind(this));
-			return _react2.default.createElement(
-				_Table.Table,
-				null,
-				_react2.default.createElement(
-					_Table.TableHeader,
+			var table = null;
+			if (this.props.movies.length != 0) {
+				return _react2.default.createElement(
+					_Table.Table,
 					null,
 					_react2.default.createElement(
-						_Table.TableRow,
+						_Table.TableHeader,
 						null,
 						_react2.default.createElement(
-							_Table.TableHeaderColumn,
-							{ style: { fontSize: '30px', textAlign: 'center' } },
-							this.props.columnTitles[0]
-						),
-						_react2.default.createElement(
-							_Table.TableHeaderColumn,
-							{ style: { fontSize: '30px', textAlign: 'center' } },
-							this.props.columnTitles[1]
-						),
-						_react2.default.createElement(
-							_Table.TableHeaderColumn,
-							{ style: { fontSize: '30px', textAlign: 'center' } },
-							this.props.columnTitles[2]
-						),
-						_react2.default.createElement(
-							_Table.TableHeaderColumn,
-							{ style: { fontSize: '30px', textAlign: 'center' } },
-							this.props.columnTitles[3]
+							_Table.TableRow,
+							null,
+							_react2.default.createElement(
+								_Table.TableHeaderColumn,
+								{ style: { fontSize: '30px', textAlign: 'center' } },
+								this.props.columnTitles[0]
+							),
+							_react2.default.createElement(
+								_Table.TableHeaderColumn,
+								{ style: { fontSize: '30px', textAlign: 'center' } },
+								this.props.columnTitles[1]
+							),
+							_react2.default.createElement(
+								_Table.TableHeaderColumn,
+								{ style: { fontSize: '30px', textAlign: 'center' } },
+								this.props.columnTitles[2]
+							),
+							_react2.default.createElement(
+								_Table.TableHeaderColumn,
+								{ style: { fontSize: '30px', textAlign: 'center' } },
+								this.props.columnTitles[3]
+							)
 						)
+					),
+					_react2.default.createElement(
+						_Table.TableBody,
+						{ showRowHover: true },
+						rows
 					)
-				),
-				_react2.default.createElement(
-					_Table.TableBody,
-					{ showRowHover: true },
-					rows
-				)
-			);
+				);
+			} else {
+				return _react2.default.createElement(_Table.Table, null);
+			}
 		}
 	});
 
@@ -36211,6 +36224,28 @@
 
 	'use strict';
 
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Img = _react2.default.createClass({
+		displayName: 'Img',
+
+
+		render: function render() {
+			return _react2.default.createElement('div', { style: { background: 'url(' + this.props.poster + ') top center no-repeat', height: '340px', width: 'initial' } });
+		}
+	});
+	module.exports = Img;
+
+/***/ },
+/* 390 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
@@ -36219,7 +36254,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _AppBar = __webpack_require__(390);
+	var _AppBar = __webpack_require__(391);
 
 	var _AppBar2 = _interopRequireDefault(_AppBar);
 
@@ -36235,7 +36270,7 @@
 	exports.default = AppBarExampleIcon;
 
 /***/ },
-/* 390 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36245,7 +36280,7 @@
 	});
 	exports.default = undefined;
 
-	var _AppBar = __webpack_require__(391);
+	var _AppBar = __webpack_require__(392);
 
 	var _AppBar2 = _interopRequireDefault(_AppBar);
 
@@ -36254,7 +36289,7 @@
 	exports.default = _AppBar2.default;
 
 /***/ },
-/* 391 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -36277,11 +36312,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _IconButton = __webpack_require__(392);
+	var _IconButton = __webpack_require__(393);
 
 	var _IconButton2 = _interopRequireDefault(_IconButton);
 
-	var _menu = __webpack_require__(396);
+	var _menu = __webpack_require__(397);
 
 	var _menu2 = _interopRequireDefault(_menu);
 
@@ -36621,7 +36656,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 392 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36631,7 +36666,7 @@
 	});
 	exports.default = undefined;
 
-	var _IconButton = __webpack_require__(393);
+	var _IconButton = __webpack_require__(394);
 
 	var _IconButton2 = _interopRequireDefault(_IconButton);
 
@@ -36640,7 +36675,7 @@
 	exports.default = _IconButton2.default;
 
 /***/ },
-/* 393 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36673,7 +36708,7 @@
 
 	var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
-	var _FontIcon = __webpack_require__(394);
+	var _FontIcon = __webpack_require__(395);
 
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
@@ -36951,7 +36986,7 @@
 	exports.default = IconButton;
 
 /***/ },
-/* 394 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36961,7 +36996,7 @@
 	});
 	exports.default = undefined;
 
-	var _FontIcon = __webpack_require__(395);
+	var _FontIcon = __webpack_require__(396);
 
 	var _FontIcon2 = _interopRequireDefault(_FontIcon);
 
@@ -36970,7 +37005,7 @@
 	exports.default = _FontIcon2.default;
 
 /***/ },
-/* 395 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37116,7 +37151,7 @@
 	exports.default = FontIcon;
 
 /***/ },
-/* 396 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37153,7 +37188,7 @@
 	exports.default = NavigationMenu;
 
 /***/ },
-/* 397 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*eslint-disable no-unused-vars*/
@@ -47233,16 +47268,16 @@
 
 
 /***/ },
-/* 398 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(399);
+	var content = __webpack_require__(400);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(401)(content, {});
+	var update = __webpack_require__(402)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -47259,10 +47294,10 @@
 	}
 
 /***/ },
-/* 399 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(400)();
+	exports = module.exports = __webpack_require__(401)();
 	// imports
 
 
@@ -47273,7 +47308,7 @@
 
 
 /***/ },
-/* 400 */
+/* 401 */
 /***/ function(module, exports) {
 
 	/*
@@ -47329,7 +47364,7 @@
 
 
 /***/ },
-/* 401 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -47581,11 +47616,11 @@
 
 
 /***/ },
-/* 402 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(403);
-	var defaultClickRejectionStrategy = __webpack_require__(404);
+	/* WEBPACK VAR INJECTION */(function(process) {var invariant = __webpack_require__(404);
+	var defaultClickRejectionStrategy = __webpack_require__(405);
 
 	var alreadyInjected = false;
 
@@ -47607,14 +47642,14 @@
 	  alreadyInjected = true;
 
 	  __webpack_require__(43).injection.injectEventPluginsByName({
-	    'TapEventPlugin':       __webpack_require__(405)(shouldRejectClick)
+	    'TapEventPlugin':       __webpack_require__(406)(shouldRejectClick)
 	  });
 	};
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 403 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -47669,7 +47704,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ },
-/* 404 */
+/* 405 */
 /***/ function(module, exports) {
 
 	module.exports = function(lastTouchEvent, clickTimestamp) {
@@ -47680,7 +47715,7 @@
 
 
 /***/ },
-/* 405 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -47708,10 +47743,10 @@
 	var EventPluginUtils = __webpack_require__(45);
 	var EventPropagators = __webpack_require__(42);
 	var SyntheticUIEvent = __webpack_require__(76);
-	var TouchEventUtils = __webpack_require__(406);
+	var TouchEventUtils = __webpack_require__(407);
 	var ViewportMetrics = __webpack_require__(77);
 
-	var keyOf = __webpack_require__(407);
+	var keyOf = __webpack_require__(408);
 	var topLevelTypes = EventConstants.topLevelTypes;
 
 	var isStartish = EventPluginUtils.isStartish;
@@ -47856,7 +47891,7 @@
 
 
 /***/ },
-/* 406 */
+/* 407 */
 /***/ function(module, exports) {
 
 	/**
@@ -47904,7 +47939,7 @@
 
 
 /***/ },
-/* 407 */
+/* 408 */
 /***/ function(module, exports) {
 
 	/**
