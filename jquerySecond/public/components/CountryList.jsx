@@ -158,7 +158,7 @@ class CountryList extends React.Component {
         value={1}
         key={country.id}
         primaryText={country.countryName}
-        leftAvatar={<Avatar src={'../country-flags/png250px/'+country.countryabv.toLowerCase()+'.png'} onTouchTap={this.handlePlayerList.bind(null,country.countryName)}
+        leftAvatar={<Avatar src={'../json/png250px/'+country.countryabv.toLowerCase()+'.png'} onTouchTap={this.handlePlayerList.bind(null,country.countryName)}
         />}
         rightIcon={<div>
          <ActionDelete onTouchTap={this.handleDeleteDialog.bind(null,country.id)}/>
@@ -227,7 +227,7 @@ class CountryList extends React.Component {
   label="No"
   primary={true}
   onTouchTap={this.handleDeleteClose}/>
-  </ddiv>
+  </div>
   <div className="col-xs-4 col-md-4">
   <FlatButton
   label="Yes"

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "json": "json-server --watch public/json/countryPlayer.json",
     "server": "webpack-dev-server --content-base public --hot --inline",
     "build": "webpack"
   },
