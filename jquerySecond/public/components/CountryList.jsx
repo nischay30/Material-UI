@@ -227,7 +227,7 @@ class CountryList extends React.Component {
   label="No"
   primary={true}
   onTouchTap={this.handleDeleteClose}/>
-  </div>
+  </ddiv>
   <div className="col-xs-4 col-md-4">
   <FlatButton
   label="Yes"
