@@ -7,3 +7,4 @@ Steps to Run:
 4. npm run server
 5. Open new Commander or terminal
 6. npm run json	
+7.go to http://localhost:8080

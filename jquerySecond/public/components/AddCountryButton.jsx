@@ -50,6 +50,9 @@ class AddCountryButton extends React.Component {
 
 	handleCountryName = (event) =>{
 		this.setState({countryName:event.target.value});
+		    console.log(":Event"+event.target.value);
+    console.log(this.state.countryName);
+
 	};
 
 	handleGoldMedals = (event) =>{

@@ -100,7 +100,7 @@
 			var _this = this;
 
 			_jquery2.default.ajax({
-				url: "http://localhost:3000/countries/?countryName_like=^" + text + "&_start=" + counter + "&_limit=10",
+				url: "/countries/?countryName_like=^" + text + "&_start=" + counter + "&_limit=10",
 				dataType: 'json',
 				type: 'GET',
 				success: function success(data, status, res) {
@@ -126,7 +126,7 @@
 		handleDelete: function handleDelete(id) {
 			_jquery2.default.ajax({
 				type: 'DELETE',
-				url: 'http://localhost:3000/countries/' + id,
+				url: '/countries/' + id,
 				success: function (data, response) {
 					this.loadDataFromServer('', this.state.counter);
 				}.bind(this),
@@ -140,7 +140,7 @@
 			_jquery2.default.ajax({
 				type: 'POST',
 				data: dataToBeAdded,
-				url: 'http://localhost:3000/countries',
+				url: '/countries',
 				success: function (country) {
 					var newData = this.state.data;
 					newData.push(country);
@@ -156,7 +156,7 @@
 				type: 'PUT',
 				dataType: 'JSON',
 				data: dataToBeUpdated,
-				url: 'http://localhost:3000/countries/' + id,
+				url: '/countries/' + id,
 				success: function (response) {
 					this.loadDataFromServer('', this.state.counter);
 				}.bind(this),
@@ -180,27 +180,31 @@
 		},
 		render: function render() {
 			return _react2.default.createElement(
-				_MuiThemeProvider2.default,
+				'div',
 				null,
 				_react2.default.createElement(
-					'div',
+					_MuiThemeProvider2.default,
 					null,
-					_react2.default.createElement(_AppBar2.default, null),
-					_react2.default.createElement(_SearchBox2.default, { url: 'http://localhost:3000/countries/?q=', onSearch: this.handleSearch }),
-					_react2.default.createElement(_AddCountryButton2.default, { add: this.handleAdd }),
-					_react2.default.createElement(_CountryList2.default, { data: this.state.data, 'delete': this.handleDelete, edit: this.handleUpdate }),
 					_react2.default.createElement(
 						'div',
-						{ className: 'center-xs' },
-						_react2.default.createElement(_RaisedButton2.default, { label: 'Prev', secondary: true,
-							onTouchTap: this.handlePrevious,
-							disabled: this.state.flagPrevious
-						}),
-						_react2.default.createElement(_RaisedButton2.default, { label: 'Next', primary: true,
-							style: { right: '20px', bottom: '20px' },
-							onTouchTap: this.handleNext,
-							disabled: this.state.flagNext
-						})
+						null,
+						_react2.default.createElement(_AppBar2.default, null),
+						_react2.default.createElement(_SearchBox2.default, { url: '/countries/?q=', onSearch: this.handleSearch }),
+						_react2.default.createElement(_AddCountryButton2.default, { add: this.handleAdd }),
+						_react2.default.createElement(_CountryList2.default, { data: this.state.data, 'delete': this.handleDelete, edit: this.handleUpdate }),
+						_react2.default.createElement(
+							'div',
+							{ className: 'center-xs' },
+							_react2.default.createElement(_RaisedButton2.default, { label: 'Prev', secondary: true,
+								onTouchTap: this.handlePrevious,
+								disabled: this.state.flagPrevious
+							}),
+							_react2.default.createElement(_RaisedButton2.default, { label: 'Next', primary: true,
+								style: { right: '20px', bottom: '20px' },
+								onTouchTap: this.handleNext,
+								disabled: this.state.flagNext
+							})
+						)
 					)
 				)
 			);
@@ -44433,7 +44437,7 @@
 	      _this.setState({ playerOpen: true });
 	      _this.setState({ titlePlayerDialog: countryName });
 	      _jquery2.default.ajax({
-	        url: "http://localhost:3000/players/?countryName=" + countryName,
+	        url: "/players/?countryName=" + countryName,
 	        dataType: 'json',
 	        type: 'GET',
 	        success: function success(data, status, res) {
@@ -44487,7 +44491,7 @@
 	              value: 1,
 	              key: country.id,
 	              primaryText: country.countryName,
-	              leftAvatar: _react2.default.createElement(_Avatar2.default, { src: '../country-flags/png250px/' + country.countryabv.toLowerCase() + '.png', onTouchTap: this.handlePlayerList.bind(null, country.countryName)
+	              leftAvatar: _react2.default.createElement(_Avatar2.default, { src: '../json/png250px/' + country.countryabv.toLowerCase() + '.png', onTouchTap: this.handlePlayerList.bind(null, country.countryName)
 	              }),
 	              rightIcon: _react2.default.createElement(
 	                'div',
@@ -48322,6 +48326,8 @@
 				_this.props.add(finalData);
 			}, _this.handleCountryName = function (event) {
 				_this.setState({ countryName: event.target.value });
+				console.log(":Event" + event.target.value);
+				console.log(_this.state.countryName);
 			}, _this.handleGoldMedals = function (event) {
 				_this.setState({ goldMedals: event.target.value });
 			}, _this.handleSilverMedals = function (event) {

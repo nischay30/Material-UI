@@ -20,7 +20,7 @@ var Main=React.createClass({
 	loadDataFromServer :function(text,counter) 
 	{
 		$.ajax({
-			url      : "http://localhost:3000/countries/?countryName_like=^"+text+"&_start=" +counter+ "&_limit=10",
+			url      : "/countries/?countryName_like=^"+text+"&_start=" +counter+ "&_limit=10",
 			dataType : 'json',
 			type     : 'GET',
 			success: (data,status,res) => {
@@ -50,7 +50,7 @@ var Main=React.createClass({
 	{
 		$.ajax({
 			type:'DELETE',
-			url:'http://localhost:3000/countries/'+id,
+			url:'/countries/'+id,
 			success:function(data,response)
 			{
 				this.loadDataFromServer('',this.state.counter);
@@ -67,7 +67,7 @@ var Main=React.createClass({
 		$.ajax({
 			type:'POST',
 			data:dataToBeAdded,
-			url:'http://localhost:3000/countries',
+			url:'/countries',
 			success:function(country)
 			{
 				let newData=this.state.data;
@@ -85,7 +85,7 @@ var Main=React.createClass({
 			type:'PUT',
 			dataType:'JSON',
 			data:dataToBeUpdated,
-			url:'http://localhost:3000/countries/'+id,
+			url:'/countries/'+id,
 			success:function (response) {
 				this.loadDataFromServer('',this.state.counter);
 			}.bind(this),
@@ -113,11 +113,12 @@ var Main=React.createClass({
 	render:function()
 	{
 		return(
+			<div>
 			<MuiThemeProvider>
 			<div>
 
 			<AppBarExampleIcon />
-			<SearchBox url={'http://localhost:3000/countries/?q='} onSearch={this.handleSearch}/>
+			<SearchBox url={'/countries/?q='} onSearch={this.handleSearch}/>
 			<AddCountryButton add={this.handleAdd}/>
 			<CountryList data={this.state.data} delete={this.handleDelete} edit={this.handleUpdate} />
 			<div className='center-xs'>
@@ -134,7 +135,7 @@ var Main=React.createClass({
 			</div>
 			</div>
 			</MuiThemeProvider>
-			
+			</div>
 			);
 	}
 });

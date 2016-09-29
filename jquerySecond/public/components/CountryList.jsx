@@ -115,7 +115,7 @@ class CountryList extends React.Component {
     this.setState({playerOpen:true});
    this.setState({titlePlayerDialog:countryName});
     $.ajax({
-      url      : "http://localhost:3000/players/?countryName="+countryName,
+      url      : "/players/?countryName="+countryName,
       dataType : 'json',
       type     : 'GET',
       success: (data,status,res) => {
