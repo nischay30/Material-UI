@@ -108,35 +108,39 @@
 		},
 		render: function render() {
 			return _react2.default.createElement(
-				_MuiThemeProvider2.default,
+				'div',
 				null,
 				_react2.default.createElement(
-					'div',
+					_MuiThemeProvider2.default,
 					null,
-					_react2.default.createElement(_AppBar2.default, null),
 					_react2.default.createElement(
 						'div',
-						{ className: 'container' },
+						null,
+						_react2.default.createElement(_AppBar2.default, null),
 						_react2.default.createElement(
 							'div',
-							{ className: 'row' },
+							{ className: 'container' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'col-md-8 col-lg-8' },
+								{ className: 'row' },
 								_react2.default.createElement(
 									'div',
-									{ className: 'box' },
-									_react2.default.createElement(_SearchBox2.default, { onFormSubmit: this.handleFormSubmit })
+									{ className: 'col-md-8 col-lg-8' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'box' },
+										_react2.default.createElement(_SearchBox2.default, { onFormSubmit: this.handleFormSubmit })
+									)
 								)
-							)
-						),
-						_react2.default.createElement(
-							'div',
-							{ className: 'row' },
+							),
 							_react2.default.createElement(
 								'div',
-								{ className: 'col-md-10 col-lg-10 col-xs-12' },
-								_react2.default.createElement(_MovieTable2.default, { movies: this.state.data, columnTitles: this.state.titles })
+								{ className: 'row' },
+								_react2.default.createElement(
+									'div',
+									{ className: 'col-md-10 col-lg-10 col-xs-12' },
+									_react2.default.createElement(_MovieTable2.default, { movies: this.state.data, columnTitles: this.state.titles })
+								)
 							)
 						)
 					)

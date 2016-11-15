@@ -3,6 +3,6 @@ Commands to run:
 
 1. npm install
 2. npm run build
-3. npm run server
+3. npm start
 
 Then go to http://localhost:8080

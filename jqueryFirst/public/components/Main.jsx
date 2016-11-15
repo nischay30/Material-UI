@@ -42,7 +42,8 @@ var MovieBox =React.createClass({
 		return({data:[],titles:[]});
 	},
 	render:function(){
-		return(<MuiThemeProvider>
+		return(<div>
+			<MuiThemeProvider>
 			<div>
 			<AppBarExampleIcon />
 
@@ -66,7 +67,7 @@ var MovieBox =React.createClass({
 
 			</div>
 			</MuiThemeProvider>
-
+			</div>
 			);
 	}
 });
